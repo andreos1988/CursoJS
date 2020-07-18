@@ -1,0 +1,47 @@
+<h1>Projetos</h1>
+
+<ul class="tree">
+    <li>
+        <span>backend</span>  
+        <ul class="lista">
+            <li>
+                <span>app</span>
+                <ul class="lista">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span>config</span>
+                <ul class="lista">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<style>
+    .lista{
+        transition: 0.4s;
+    }
+    
+</style>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    let span = document.querySelectorAll(".tree span")
+    span.forEach(folder =>{
+        folder.onclick = function(e){
+           const ul =  folder.nextElementSibling
+            if(ul.style.display == 'none'){
+                ul.style.display = ''
+            }else{
+                ul.style.display = 'none'
+           }
+        }
+    })
+
+</script>
