@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <a wait="8" href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        const a = document.querySelector('[wait]')
+        a.onclick = function (e){
+            const tempo = a.getAttribute('wait')
+            e.preventDefault()
+            console.log('Saindo em '+ tempo +' segundos')
+            setTimeout(()=>{
+                window.location = e.target.href
+            }, tempo * 1000)
+        }
+    </script>
+</body>

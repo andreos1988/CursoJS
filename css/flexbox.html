@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        div{
+            border: 5px solid green;
+            box-sizing:border-box;
+        }
+        .container{
+            display: flex;
+            justify-content:stretch;
+            width: 500px;
+            height: 500px;
+            align-items:center;
+            /* flex-wrap: nowrap; */
+            align-content:center;
+        }
+        .container :nth-child(2){
+            flex-grow:1;
+            /* align-self:flex-end; */
+        }
+        .container div{
+            flex-grow: 1;
+            text-align: center;
+            /* width: 100%; */
+            /* width: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        
+    </div>
+</body>
+</html>
