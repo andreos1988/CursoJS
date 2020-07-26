@@ -10,6 +10,10 @@
         input {
             font-size: 2em;
         }
+        #posicao {
+            position: absolute;
+
+        }
     </style>
 </head>
 
@@ -20,6 +24,31 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        $(function(){
+            function mostrarPosicaoMouse(e){
+                $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+                $('#posicao').css({'top':`${e.clientY}px`, 'left': `${e.clientX}px`})
+            }
+            
+            $('input').on('keyup')
+            $('body').on('mousemove', mostrarPosicaoMouse)
+
+
+           let cliques = 0
+           $('body').click(e =>{
+               $('#cliques').html(`Cliques: ${++cliques}`)
+           })
+
+           const backgroundOriginal = $('body').css('background-color')
+
+           $('input').on('keyup', function(e){
+               const valor = $(this).val()
+               if(valor.match(/#[\da-fA-F]{6}/)){
+                    $('body').css('background-color',valor)
+               }else{
+                $('body').css('background-color',backgroundOriginal)
+               }
+           }) 
+        })
     </script>
 </body>

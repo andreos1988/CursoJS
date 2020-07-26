@@ -19,7 +19,15 @@
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
+        $(document).ready(function (){
+            $table = $('<table>')
+            $table.append(`<tr><td>NOME</td><td>NOTA</td></tr>`)    
+            pessoas.forEach(function(pessoa){
+                $table.append(`<tr><td>${pessoa.nome}</td><td>${pessoa.nota}</td></tr>`)    
+            })
+            //$table = $('<table>').append('<tr><td></td><td></td></tr>')
+            $('#conteudo').append($table)
+        })
         
-        // ...
     </script>
 </body>
