@@ -8,9 +8,13 @@ export default props =>
         <ul>
             
             {
-                React.cloneElement(props.children, {
-                    ...props.children.props
-                })
+
+                React.Children.map(props.children, child =>{
+                    React.cloneElement(child, {
+                        ...props, ...child.props
+                    })
+                })   
+                
             }
         </ul>
     </div>
